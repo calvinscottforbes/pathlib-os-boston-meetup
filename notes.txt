@@ -1,0 +1,20 @@
+pathlib - "high-level" path operations and extra i/o stuff
+    https://docs.python.org/3/library/pathlib.html
+    PurePath - path operations
+    Path/Concrete Path - PurePath with i/o operations
+    Posix and Windows flavors
+    How is flavor actually determined?
+        os.name == 'nt' (Windows) or not (POSIX)
+        https://github.com/python/cpython/blob/ba16324b276c7b2b5ecf09479f30fc82c12192ae/Lib/pathlib.py#L469
+        https://github.com/python/cpython/blob/ba16324b276c7b2b5ecf09479f30fc82c12192ae/Lib/pathlib.py#L868
+    Flavor respects CASE rules of it's Operating System; Windows pathst aren't case sensitive.
+    Test speed of purepath vs concrete path
+        pure paths are barely faster (makes sense), but probably doesn't matter.
+        You just use Path by default to make it simpler
+    do i/o operations close automatically (write_text, write_bytes, read_text, read_bytes)?
+        yes they do - nice for simple reading/writing
+os.path - "low-level" path operations
+    https://docs.python.org/3/library/os.path.html#module-os.path
+
+
+os.Pathlike - ABC for pathlib and os.path objects
