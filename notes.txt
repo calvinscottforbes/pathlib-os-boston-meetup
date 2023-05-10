@@ -18,3 +18,24 @@ os.path - "low-level" path operations
 
 
 os.Pathlike - ABC for pathlib and os.path objects
+
+
+os path was created to centrallize path operations - "Object-oriented filesystem paths"
+
+
+/ vs .joinpath()
+
+path parts - name, suffix, stem, anchor, parent
+
+.iterdir, .glob, .rglob
+
+stat()
+
+
+"The OS library will return a string, whereas the Pathlib will return an object of PosixPath. The benefit of having PosixPath returned is that we can directly use the returned object to do a lot more further operations. This will be demonstrated in later sections."
+
+"remembering some of the os methods (such as os.path.expanduser) is difficult"
+
+https://betterprogramming.pub/should-you-be-using-pathlib-6f3a0fddec7e#:~:text=to%20text%20files-,Making%20directories,-First%20with%20os
+
+os.walk() alternatives - glob
