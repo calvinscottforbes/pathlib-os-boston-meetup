@@ -1,12 +1,18 @@
 import random
 from itertools import combinations
 from pathlib import Path
+
 import requests
 
+
 def download_word_list():
-    # r = requests.get("https://github.com/dwyl/english-words/blob/master/words_alpha.txt")
-    r = requests.get("https://github.com/dwyl/english-words/raw/master/words_alpha.txt")
-    Path("words_alpha.txt").write_text()
+    r = requests.get(
+        "https://www.mit.edu/~ecprice/wordlist.10000"
+    )  # legit source of words
+    path = Path("wordlist.txt")
+    path.write_text(r.text)
+    return path
+
 
 def main():
     word_list = download_word_list()
